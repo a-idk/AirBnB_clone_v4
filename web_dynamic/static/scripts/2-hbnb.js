@@ -2,7 +2,7 @@
 $('document').ready(function () {
   // TASK 3
   const web = 'http://' + window.location.hostname + ':5001/api/v1/status/';
-  $.get(url, function (response) {
+  $.get(web, function (response) {
     if (response.status === 'OK') {
       $('DIV#api_status').addClass('available');
     } else {
@@ -11,7 +11,7 @@ $('document').ready(function () {
   });
   // Task 4
   // initializing the amenities object
-  let amenities = {};
+  const amenities = {};
   // check for change in checkbox input
   $('INPUT[type="checkbox"]').change(function () {
     if ($(this).is(':checked')) {
@@ -24,7 +24,7 @@ $('document').ready(function () {
       $('.amenities H4').html('&nbsp;');
     } else {
     // Updating text of the <h4> element to display the selected amenities
-    $('.amenities H4').text(Object.values(amenities).join(', '));
+      $('.amenities H4').text(Object.values(amenities).join(', '));
     }
   });
 });
