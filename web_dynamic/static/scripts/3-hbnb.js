@@ -11,7 +11,7 @@ $('document').ready(function () {
   });
 
   $.ajax({
-    url: web + ':5001/api/v1/places_search/',
+    url: 'http://0.0.0.0:5001/api/v1/places_search/',
     type: 'POST',
     data: '{}',
     contentType: 'application/json',
